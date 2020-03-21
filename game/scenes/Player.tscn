@@ -11,8 +11,8 @@
 [ext_resource path="res://assets/8.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 94.946
-height = 70.0946
+radius = 14.0663
+height = 6.17323
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -23,18 +23,15 @@ animations = [ {
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 483.981, 206.81 )
+position = Vector2( -19.2362, -18.291 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.94516, 0 )
+position = Vector2( 15.4382, 18.9407 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 15.8656, -5.46506 )
-scale = Vector2( 0.663402, 0.688889 )
+position = Vector2( 19.0827, 15.0894 )
+scale = Vector2( 0.114864, 0.104436 )
 frames = SubResource( 2 )
-frame = 1
+frame = 7
