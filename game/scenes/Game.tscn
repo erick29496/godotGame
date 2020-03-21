@@ -4,22 +4,22 @@
 [ext_resource path="res://scripts/camera.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.5486, 15.2742 )
+extents = Vector2( 48.2901, 15.2742 )
 
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 83.214, 529.852 )
+position = Vector2( 136.882, 294.824 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 18.9033, 542.523 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 502.283, 66.0093 )
+position = Vector2( 1877.2, 59.979 )
 scale = Vector2( 39.7097, 1 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -77.726, 320.157 )
+position = Vector2( 393.982, 303.527 )
 current = true
 script = ExtResource( 2 )
