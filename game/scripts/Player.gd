@@ -1,14 +1,16 @@
 extends KinematicBody2D
  
-const JUMP_FORCE = 500
+const JUMP_FORCE = 600
 const GRAVITY = 50
 const MAX_FALL_SPEED = 1000
+const LIMIT_Y = 25
+
 
 onready var sprite = $AnimatedSprite
  
 var y_velo = 0
 var facing_right = false
-var fuel = 100
+var fuel = 1000000000
 
 var time = 0
 var futureTime = 0
@@ -16,6 +18,8 @@ var futureTime = 0
 func _physics_process(delta):
 	$AnimatedSprite.play()
 	var walkSpeed = get_parent().get_node("Camera2D").getSpeed()
+	if position.y < LIMIT_Y:
+		position.y = LIMIT_Y
 	move_and_slide(Vector2(walkSpeed, y_velo), Vector2(0, -1))
 
 	var grounded = is_on_floor()
