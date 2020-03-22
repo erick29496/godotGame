@@ -1,6 +1,6 @@
 extends Camera2D
 
-var WALK_SPEED = 300
+var WALK_SPEED = 100
 var time = 0
 var futureTime = 0
 
