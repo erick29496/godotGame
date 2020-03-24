@@ -7,11 +7,6 @@ const LIMIT_TOP_Y = 25
 var currentY = 0
 var goDown = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	print(get_parent().get_node("Camera2D").get_viewport())
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if !goDown:
@@ -25,5 +20,5 @@ func _process(delta):
 	
 
 func _on_Area2D_body_entered(body):
-	get_parent().get_node('Player').restoreFuel()
+	get_parent().get_parent().get_node('Player').restoreFuel()
 	queue_free()

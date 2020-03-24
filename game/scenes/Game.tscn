@@ -1,17 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Fuel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/BG/BG.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48.2901, 15.2742 )
 
 [node name="Game" type="Node"]
-
-[node name="Area2D4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1627, 507.578 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 136.882, 294.824 )
@@ -29,11 +27,25 @@ position = Vector2( 393.982, 303.527 )
 current = true
 script = ExtResource( 2 )
 
-[node name="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 679.419, 424.134 )
 
-[node name="Area2D2" parent="." instance=ExtResource( 3 )]
+[node name="Area2D3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 669.368, 170.86 )
+
+[node name="Fuels" type="Node2D" parent="."]
+
+[node name="Area2D2" parent="Fuels" instance=ExtResource( 3 )]
 position = Vector2( 1618.96, 91.4838 )
 
-[node name="Area2D3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 669.368, 170.86 )
+[node name="Area2D4" parent="Fuels" instance=ExtResource( 3 )]
+position = Vector2( 1627, 507.578 )

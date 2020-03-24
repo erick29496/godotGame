@@ -16,5 +16,4 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	get_parent().get_node('Player').die(body)
-	print("_on_Area2D_body_entered")
+	get_parent().get_parent().get_node('Player').die()
