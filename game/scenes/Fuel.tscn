@@ -8,6 +8,7 @@ radius = 29.8
 
 [node name="Area2D" type="Area2D"]
 position = Vector2( 173.684, 89.4737 )
+collision_layer = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
