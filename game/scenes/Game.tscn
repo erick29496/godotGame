@@ -30,9 +30,13 @@ script = ExtResource( 2 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1000, 750 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1, 0.8 )
 texture = ExtResource( 5 )
+centered = false
+region_rect = Rect2( 1, 1, 4000, 750 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
