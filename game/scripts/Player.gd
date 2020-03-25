@@ -27,7 +27,7 @@ func _physics_process(delta):
 		if $AnimatedSprite.frame == 9:
 			$AnimatedSprite.stop()
 			
-	else:
+	else:		
 		var grounded = is_on_floor()
 		if grounded:
 			fuel = MAX_FUEL
@@ -41,6 +41,8 @@ func _physics_process(delta):
 			y_velo = 5
 		if y_velo > MAX_FALL_SPEED:
 			y_velo = MAX_FALL_SPEED
+		updateFuel(fuel)
+		
 		
 func die():
 	dead = true
@@ -49,3 +51,7 @@ func die():
 
 func restoreFuel():
 	fuel += MAX_FUEL
+	updateFuel(MAX_FUEL)
+
+func updateFuel(fuel):
+	get_parent().get_node("Camera2D/FuelBar")._on_fuel_updated(fuel)
