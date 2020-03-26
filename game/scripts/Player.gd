@@ -4,17 +4,20 @@ const JUMP_FORCE = 450
 const GRAVITY = 25
 const MAX_FALL_SPEED = 1000
 const LIMIT_Y = 25
-const MAX_FUEL = 100
+const FUEL = 100
+const MAX_FUEL = 1000
 
 onready var sprite = $AnimatedSprite
  
 var y_velo = 0
 var facing_right = false
-var fuel = MAX_FUEL
+var fuel = FUEL
 
 var time = 0
 var futureTime = 0
 var dead = false
+var score = 0
+var multiplier = 1
  
 func _physics_process(delta):
 	var walkSpeed = get_parent().get_node("Camera2D").getSpeed()
@@ -28,9 +31,11 @@ func _physics_process(delta):
 			$AnimatedSprite.stop()
 			
 	else:		
+		score += multiplier
 		var grounded = is_on_floor()
 		if grounded:
-			fuel = MAX_FUEL
+			if fuel < FUEL:
+				fuel = FUEL
 			$AnimatedSprite.play("run")
 		y_velo += GRAVITY
 		if fuel > 0 and Input.is_action_pressed("ui_select"):
@@ -50,8 +55,16 @@ func die():
 	get_parent().get_node("Camera2D").stop()
 
 func restoreFuel():
-	fuel += MAX_FUEL
-	updateFuel(MAX_FUEL)
+	fuel += FUEL
+	if fuel > MAX_FUEL:
+		fuel = MAX_FUEL
+	updateFuel(fuel)
 
 func updateFuel(fuel):
 	get_parent().get_node("Camera2D/FuelBar")._on_fuel_updated(fuel)
+	
+func increaseMultiplayer():
+	multiplier += 1
+	
+func getScore():
+	return self.score
