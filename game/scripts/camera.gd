@@ -18,12 +18,12 @@ func _process(delta):
 		
 		if futureTime == 0:
 			futureTime = time + 10
-			increaseMultiplayer()
 			
 		position.x += WALK_SPEED * delta
 		
 		if time >= futureTime:
 			WALK_SPEED += SPEED_INCREASE
+			increaseMultiplayer()
 			futureTime = 0
 
 func stop():
