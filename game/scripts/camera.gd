@@ -2,7 +2,7 @@ extends Camera2D
 
 const SPEED_INCREASE = 20
 
-var WALK_SPEED = 100
+var WALK_SPEED = 200
 var time = 0
 var futureTime = 0
 
