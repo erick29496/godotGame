@@ -18,6 +18,7 @@ var futureTime = 0
 var dead = false
 var score = 0
 var multiplier = 1
+var contScore = 0
  
 func _physics_process(delta):
 	var walkSpeed = get_parent().get_node("Camera2D").getSpeed()
@@ -31,7 +32,10 @@ func _physics_process(delta):
 			$AnimatedSprite.stop()
 			
 	else:		
-		score += multiplier
+		if contScore == 10:
+			score += multiplier
+			contScore = 0
+		contScore += 1	
 		var grounded = is_on_floor()
 		if grounded:
 			if fuel < FUEL:
@@ -48,7 +52,6 @@ func _physics_process(delta):
 			y_velo = MAX_FALL_SPEED
 		updateFuel(fuel)
 		
-		
 func die():
 	dead = true
 	$AnimatedSprite.play("die")
@@ -61,10 +64,10 @@ func restoreFuel():
 	updateFuel(fuel)
 
 func updateFuel(fuel):
-	get_parent().get_node("Camera2D/FuelBar")._on_fuel_updated(fuel)
+	get_parent().get_node("CanvasLayer/FuelBar")._on_fuel_updated(fuel)
 	
 func increaseMultiplayer():
 	multiplier += 1
 	
 func getScore():
-	return self.score
+	return score
