@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=2]
@@ -13,12 +13,14 @@
 [ext_resource path="res://scenes/Map.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/Monstruo.png" type="Texture" id=13]
+[ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scripts/Obstacles.gd" type="Script" id=15]
 
 [node name="Game" type="Node"]
 script = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 252.876, 320.007 )
+position = Vector2( 353.736, 339.528 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -105,7 +107,7 @@ __meta__ = {
 script = ExtResource( 10 )
 maps = [ ExtResource( 11 ), ExtResource( 12 ) ]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="Map"]
 tile_set = ExtResource( 6 )
 collision_layer = 8
 format = 1
@@ -113,3 +115,10 @@ tile_data = PoolIntArray( 589822, 0, 0, 524288, 0, 0, 524290, 0, 0, 524292, 0, 0
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Obstacles" type="Node2D" parent="."]
+script = ExtResource( 15 )
+obstacles = [ ExtResource( 14 ) ]
+
+[node name="Wall" parent="Obstacles" instance=ExtResource( 14 )]
+position = Vector2( 1512.9, 224.495 )

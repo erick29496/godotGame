@@ -4,8 +4,8 @@ const JUMP_FORCE = 450
 const GRAVITY = 25
 const MAX_FALL_SPEED = 1000
 const LIMIT_Y = 25
-const FUEL = 100
-const MAX_FUEL = 1000
+const FUEL = 80
+const MAX_FUEL = 500
 
 onready var sprite = $AnimatedSprite
  

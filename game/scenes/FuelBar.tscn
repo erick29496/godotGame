@@ -15,7 +15,7 @@ __meta__ = {
 [node name="FuelUnder" type="TextureProgress" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-max_value = 1000.0
+max_value = 500.0
 value = 100.0
 texture_under = ExtResource( 3 )
 tint_progress = Color( 0.00784314, 0.670588, 0.992157, 1 )
@@ -26,7 +26,7 @@ __meta__ = {
 [node name="FuelOver" type="TextureProgress" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-max_value = 1000.0
+max_value = 500.0
 value = 100.0
 texture_progress = ExtResource( 4 )
 tint_progress = Color( 1, 0.0901961, 0.580392, 1 )

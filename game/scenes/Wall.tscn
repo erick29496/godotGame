@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Tiles/Tile (15).png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.4105, 92.2491 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2( -1.05266, 1.05264 )
+rotation = -6.28319
+scale = Vector2( 0.92, 1 )
+collision_layer = 16
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 34.8478, -1.37241 )
+rotation = -1.5708
+scale = Vector2( 0.7, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.11331, 1.30151 )
+shape = SubResource( 1 )
