@@ -7,6 +7,7 @@ const LIMIT_Y = 25
 const MIN_Y = 800
 const FUEL = 80
 const MAX_FUEL = 500
+const SPEED = 50
 
 onready var sprite = $AnimatedSprite
  
@@ -20,6 +21,7 @@ var dead = false
 var score = 0
 var multiplier = 1
 var contScore = 0
+var speed = 0
  
 func _physics_process(delta):
 	var walkSpeed = get_parent().get_node("Camera2D").getSpeed()
@@ -27,7 +29,9 @@ func _physics_process(delta):
 		position.y = LIMIT_Y
 	elif position.y > MIN_Y:
 		die()
-	move_and_slide(Vector2(walkSpeed, y_velo), Vector2(0, -1))
+	if getDistancePlayerCamera() <= 40:
+		speed = 0	
+	move_and_slide(Vector2(walkSpeed + speed, y_velo), Vector2(0, -1))
 	y_velo += GRAVITY
 	
 	if dead:
@@ -77,3 +81,6 @@ func getScore():
 
 func getDistancePlayerCamera():
 	return (get_parent().get_node("Camera2D").get_camera_position().x - position.x)
+	
+func resetPosition():
+	speed = SPEED

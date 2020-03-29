@@ -18,7 +18,6 @@ func _process(delta):
 		else:
 			get_node("AnimationPlayer").stop()
 
-
 func _on_Uruguru_body_entered(body):
 	playerDead = true
 	get_parent().get_parent().get_node('Player').die()

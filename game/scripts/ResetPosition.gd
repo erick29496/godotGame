@@ -9,7 +9,6 @@ var goDown = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += delta * (get_parent().get_parent().get_node("Camera2D").getSpeed() / 2)
 	if !goDown:
 		position.y -= SPEED
 		if position.y < LIMIT_TOP_Y:
@@ -21,5 +20,5 @@ func _process(delta):
 	
 
 func _on_Area2D_body_entered(body):
-	get_parent().get_parent().get_node('Player').restoreFuel()
+	get_parent().get_parent().get_node('Player').resetPosition()
 	queue_free()
