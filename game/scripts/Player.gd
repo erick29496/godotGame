@@ -4,6 +4,7 @@ const JUMP_FORCE = 450
 const GRAVITY = 25
 const MAX_FALL_SPEED = 1000
 const LIMIT_Y = 25
+const MIN_Y = 800
 const FUEL = 80
 const MAX_FUEL = 500
 
@@ -22,8 +23,11 @@ var contScore = 0
  
 func _physics_process(delta):
 	var walkSpeed = get_parent().get_node("Camera2D").getSpeed()
+	print(position.y)
 	if position.y < LIMIT_Y:
 		position.y = LIMIT_Y
+	elif position.y > MIN_Y:
+		die()
 	move_and_slide(Vector2(walkSpeed, y_velo), Vector2(0, -1))
 	y_velo += GRAVITY
 	
@@ -35,7 +39,7 @@ func _physics_process(delta):
 		if contScore == 10:
 			score += multiplier
 			contScore = 0
-		contScore += 1	
+		contScore += 1
 		var grounded = is_on_floor()
 		if grounded:
 			if fuel < FUEL:
