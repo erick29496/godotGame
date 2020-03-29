@@ -1,20 +1,60 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Monstruo.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Uruguru.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 90.0829, 167.786 )
+extents = Vector2( 90.0829, 418.341 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "eat"
+length = 0.7
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.35, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.8, 1.8 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "mouth"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.8, 1.8 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Uruguru" type="Area2D"]
 collision_layer = 32
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -54.6443, 37.5268 )
+position = Vector2( -57.2383, 15.4781 )
+scale = Vector2( 1, 0.922397 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 0.473983
 texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/eat = SubResource( 3 )
+anims/mouth = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Uruguru_body_entered"]

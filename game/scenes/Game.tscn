@@ -72,17 +72,17 @@ position = Vector2( 1627, 425.319 )
 [node name="FuelBar" parent="CanvasLayer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 24.4909
-margin_top = 551.58
-margin_right = 1048.49
-margin_bottom = 1151.58
+margin_left = 9.0
+margin_top = 42.0
+margin_right = 863.0
+margin_bottom = 217.0
 rect_scale = Vector2( 1.16, 0.239999 )
 
 [node name="FuelLabel" type="RichTextLabel" parent="CanvasLayer"]
-margin_left = 55.1737
-margin_top = 561.976
-margin_right = 95.1737
-margin_bottom = 601.976
+margin_left = 12.1353
+margin_top = 48.0564
+margin_right = 52.1353
+margin_bottom = 88.0564
 bbcode_enabled = true
 bbcode_text = "[b]FUEL[/b]"
 text = "FUEL"
@@ -91,9 +91,9 @@ __meta__ = {
 }
 
 [node name="Score" type="RichTextLabel" parent="CanvasLayer"]
-margin_left = 8.83282
+margin_left = 12.241
 margin_top = 20.7516
-margin_right = 408.833
+margin_right = 412.241
 margin_bottom = 60.7516
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true

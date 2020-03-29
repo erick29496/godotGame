@@ -13,8 +13,9 @@ __meta__ = {
 }
 
 [node name="FuelUnder" type="TextureProgress" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 842.0
+margin_bottom = 130.0
+rect_scale = Vector2( 0.3, 0.746 )
 max_value = 500.0
 value = 100.0
 texture_under = ExtResource( 3 )
@@ -24,8 +25,10 @@ __meta__ = {
 }
 
 [node name="FuelOver" type="TextureProgress" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -0.957184
+margin_right = 841.043
+margin_bottom = 130.0
+rect_scale = Vector2( 0.3, 0.731 )
 max_value = 500.0
 value = 100.0
 texture_progress = ExtResource( 4 )

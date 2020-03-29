@@ -71,3 +71,6 @@ func increaseMultiplayer():
 	
 func getScore():
 	return score
+
+func getDistancePlayerCamera():
+	return (get_parent().get_node("Camera2D").get_camera_position().x - position.x)
