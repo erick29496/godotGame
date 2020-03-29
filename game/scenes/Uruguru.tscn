@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Monstruo.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Uruguru.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 90.0829, 167.786 )
+
+[node name="Uruguru" type="Area2D"]
+collision_layer = 32
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -54.6443, 37.5268 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 0.473983
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Uruguru_body_entered"]
