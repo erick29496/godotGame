@@ -2,7 +2,7 @@ extends Node2D
 
 export(Array) var fuel
 
-const MAX_SECONDS = 1
+const MAX_SECONDS = 20
 var timer
 var seconds = MAX_SECONDS
 var cont = 0

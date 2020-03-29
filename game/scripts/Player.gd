@@ -37,6 +37,8 @@ func _physics_process(delta):
 	if dead:
 		if $AnimatedSprite.frame == 9:
 			$AnimatedSprite.stop()
+			Global.set_score(score)
+			get_parent().goToDeathScreen()
 			
 	else:		
 		if contScore == 10:

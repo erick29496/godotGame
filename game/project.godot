@@ -16,8 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="godotGame"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+
+[display]
+
+window/size/resizable=false
 
 [rendering]
 
