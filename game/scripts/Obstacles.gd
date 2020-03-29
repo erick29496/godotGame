@@ -2,7 +2,7 @@ extends Node2D
 
 export(Array) var obstacles
 
-const MAX_SECONDS = 8
+const MAX_SECONDS = 1
 var timer
 var seconds = MAX_SECONDS
 var cont = 0

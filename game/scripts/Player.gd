@@ -23,7 +23,6 @@ var contScore = 0
  
 func _physics_process(delta):
 	var walkSpeed = get_parent().get_node("Camera2D").getSpeed()
-	print(position.y)
 	if position.y < LIMIT_Y:
 		position.y = LIMIT_Y
 	elif position.y > MIN_Y:
