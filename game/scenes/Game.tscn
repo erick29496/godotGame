@@ -14,11 +14,11 @@
 [ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Uruguru.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scripts/Obstacles.gd" type="Script" id=15]
 [ext_resource path="res://scenes/RotatingWall.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/ResetPosition.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scripts/Fuels.gd" type="Script" id=18]
 [ext_resource path="res://scripts/Speed.gd" type="Script" id=19]
+[ext_resource path="res://scripts/Enemies.gd" type="Script" id=20]
 
 [node name="Game" type="Node"]
 script = ExtResource( 9 )
@@ -48,6 +48,9 @@ position = Vector2( 1380, 380 )
 texture = ExtResource( 5 )
 
 [node name="Enemies" type="Node2D" parent="."]
+script = ExtResource( 20 )
+enemies = [ ExtResource( 4 ) ]
+obstacles = [ ExtResource( 14 ), ExtResource( 16 ) ]
 
 [node name="Area2D" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 1123.91, 374.897 )
@@ -116,8 +119,6 @@ __meta__ = {
 }
 
 [node name="Obstacles" type="Node2D" parent="."]
-script = ExtResource( 15 )
-obstacles = [ ExtResource( 14 ), ExtResource( 16 ) ]
 
 [node name="Wall" parent="Obstacles" instance=ExtResource( 14 )]
 position = Vector2( 1512.9, 224.495 )

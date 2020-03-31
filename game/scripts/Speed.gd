@@ -2,10 +2,9 @@ extends Node2D
 
 export(Array) var speed
 
-const MAX_SECONDS = 15
+const MAX_SECONDS = 10
 var timer
 var seconds = MAX_SECONDS
-var cont = 0
 
 func _ready():
 	timer = Timer.new()
@@ -16,20 +15,11 @@ func _ready():
 	
 func _on_timer_timeout():
 	if get_parent().get_node("Camera2D").getSpeed() >= 220 and get_parent().get_node("Player").getDistancePlayerCamera() > 100:
-		if seconds == MAX_SECONDS:
-			seconds = 2
-			timer.set_wait_time(seconds)
-		else:
-			if cont == 4:
-				seconds = MAX_SECONDS	
-				cont = 0
-				timer.set_wait_time(seconds)
-			_spawn_object()
+		_spawn_object()
 	
 func _spawn_object():
 	var index
 	var new_speed
-	cont += 1
 	
 	index = randi()%speed.size()
 	new_speed = speed[index].instance()

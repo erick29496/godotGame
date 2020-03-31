@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Tileset" type="Node2D"]
+z_index = 1
 
 [node name="Grass" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
