@@ -38,23 +38,29 @@ func _spawn_object():
 	var new_enemy
 	cont += 1
 	var list
+	var positionY
 	
 	if enemySelected == 0: # 0 = obstacles
 		list = obstacles	
+		positionY = 380
 	elif enemySelected == 1: # 1 = enemies
 		list = enemies
+		positionY = 450
 	else: # obstacles + enemies
 		var option = randi()%2
 		if option == 0:
 			list = obstacles
+			positionY = 380
 		else:
 			list = enemies	
+			positionY = 450
+			
 	index = randi()%list.size()
 	new_enemy = list[index].instance()
 	new_enemy.set_rotation(randi()%360)
 	var pos = get_parent().get_node("Camera2D").get_camera_position() + Vector2(700, 0)
 	
-	pos.y = randi()%380+85
+	pos.y = randi()%positionY + 85
 	new_enemy.set_position(pos)
 	add_child(new_enemy)
 	

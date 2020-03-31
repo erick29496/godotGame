@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 Global="*res://scripts/global.gd"
 
+[display]
+
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
