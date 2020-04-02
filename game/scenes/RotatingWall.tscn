@@ -1,9 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Tiles/Tile (15).png" type="Texture" id=1]
+[ext_resource path="res://scripts/Wall.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.4105, 92.2491 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Break"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.6 ), Vector2( 1e-05, 1e-05 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Rotating"
@@ -22,9 +39,12 @@ tracks/0/keys = {
 "values": [ -360.0, 0.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 37.5811, 90.1294 )
+
 [node name="StaticBody2D" type="StaticBody2D"]
 position = Vector2( -1.05266, 1.05264 )
-rotation = -5.35484
+rotation = -6.28319
 scale = Vector2( 0.92, 1 )
 collision_layer = 16
 __meta__ = {
@@ -43,4 +63,15 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Rotating"
+anims/Break = SubResource( 4 )
 anims/Rotating = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -4.65517, -1.56815 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]

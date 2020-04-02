@@ -53,13 +53,13 @@ enemies = [ ExtResource( 4 ) ]
 obstacles = [ ExtResource( 14 ), ExtResource( 16 ) ]
 
 [node name="Area2D" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 1123.91, 374.897 )
+position = Vector2( 1216.78, 194.324 )
 
 [node name="Area2D3" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 821.513, 105.211 )
 
 [node name="Area2D2" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 833.563, 428.898 )
+position = Vector2( 615.156, 124.503 )
 
 [node name="Fuels" type="Node2D" parent="."]
 script = ExtResource( 18 )
@@ -121,7 +121,10 @@ __meta__ = {
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="Wall" parent="Obstacles" instance=ExtResource( 14 )]
-position = Vector2( 1512.9, 224.495 )
+position = Vector2( 1469.91, 434.304 )
+
+[node name="StaticBody2D" parent="Obstacles" instance=ExtResource( 16 )]
+position = Vector2( 1734.17, 248.696 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 376.213, 293.393 )

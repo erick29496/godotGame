@@ -63,6 +63,7 @@ func _physics_process(delta):
 		
 func die():
 	dead = true
+	speed = 0;
 	$AnimatedSprite.play("die")
 	get_parent().get_node("Camera2D").stop()
 

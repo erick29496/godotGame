@@ -11,12 +11,10 @@ func _ready():
 func _process(delta):
 	if !playerDead:
 		var distance = getPlayerDistance()
-		if distance > 150 and distance <= 300:
-			get_node("AnimationPlayer").play("mouth")
-		elif distance > 300:
+		if distance > 250:
 			get_node("AnimationPlayer").play("eat")
 		else:
-			get_node("AnimationPlayer").stop()
+			get_node("AnimationPlayer").play("mouth")
 
 func _on_Uruguru_body_entered(body):
 	playerDead = true

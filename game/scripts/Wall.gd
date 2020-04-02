@@ -1,5 +1,6 @@
 extends Area2D
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,13 +16,9 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_body_entered(body):
-	get_parent().get_parent().get_node('Player').die()
-	$AnimationPlayer.play("Explote")
-
-
 func _on_Area2D_area_entered(area):
-	position.y = 350
-	$AnimationPlayer.play("Explote")
-	yield($AnimationPlayer, "animation_finished")
-	queue_free()
+	get_parent().position.y = 350
+	get_parent().get_node("AnimationPlayer").play("Break")
+	yield(get_parent().get_node("AnimationPlayer"), "animation_finished")
+	get_parent().queue_free()
+

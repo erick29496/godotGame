@@ -23,3 +23,8 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	get_parent().get_parent().get_node('Player').restoreFuel()
 	queue_free()
+
+
+func _on_Area2D_area_entered(area):
+	position.y = 350
+	queue_free()
