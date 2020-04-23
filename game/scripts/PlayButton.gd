@@ -18,3 +18,11 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/Game.tscn")
+
+
+func _on_Button2_pressed():
+	get_tree().change_scene("res://scenes/Shop.tscn")
+
+
+func _on_MenuButton_pressed():
+	get_tree().change_scene("res://scenes/Menu.tscn")
