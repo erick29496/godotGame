@@ -13,5 +13,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	get_parent().get_node("Score").text = str(Global.get_shopingPoints()) + " puntos"
+	get_parent().get_node("Fuel").text = "Fuel: " + str(Global.get_fuel())
