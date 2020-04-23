@@ -20,7 +20,7 @@ margin_bottom = 722.0
 theme = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Panel"]
-position = Vector2( 312.352, 257.461 )
+position = Vector2( 338.947, 256.544 )
 scale = Vector2( 0.362169, 0.349157 )
 texture = ExtResource( 1 )
 

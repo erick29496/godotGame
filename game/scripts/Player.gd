@@ -5,9 +5,9 @@ const GRAVITY = 25
 const MAX_FALL_SPEED = 1000
 const LIMIT_Y = 25
 const MIN_Y = 800
-const FUEL = 80
 const MAX_FUEL = 500
 const SPEED = 50
+var FUEL = Global.get_fuel()
 
 onready var sprite = $AnimatedSprite
  
