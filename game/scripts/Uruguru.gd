@@ -27,6 +27,6 @@ func getPlayerDistance():
 
 func takeDamage(damage):
 	hp -= damage
-	get_parent().get_parent().get_node("CanvasLayer/UruburuBar")._on_hp_updated(hp)
+	get_parent().get_parent().get_node("CanvasLayer/HPBar")._on_hp_updated(hp)
 	if hp == 0:
 		$Sprite.queue_free()
