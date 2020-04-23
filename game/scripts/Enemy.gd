@@ -21,6 +21,7 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Area2D_area_entered(area):
+	get_parent().get_parent().get_node("Camera2D/Uruguru").takeDamage(10)
 	position.y = 350
 	$AnimationPlayer.play("Explote")
 	yield($AnimationPlayer, "animation_finished")

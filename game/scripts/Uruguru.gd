@@ -1,6 +1,7 @@
 extends Area2D
 
 var playerDead = false
+var hp = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,3 +24,9 @@ func _on_Uruguru_body_entered(body):
 	
 func getPlayerDistance():
 	return get_parent().get_parent().get_node('Player').getDistancePlayerCamera()
+
+func takeDamage(damage):
+	hp -= damage
+	get_parent().get_parent().get_node("CanvasLayer/UruburuBar")._on_hp_updated(hp)
+	if hp == 0:
+		$Sprite.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/Map2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Uruguru.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/HPBar.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/RotatingWall.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/ResetPosition.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scripts/Fuels.gd" type="Script" id=18]
@@ -82,6 +83,13 @@ margin_right = 863.0
 margin_bottom = 217.0
 rect_scale = Vector2( 1.16, 0.239999 )
 
+[node name="UruburuBar" parent="CanvasLayer" instance=ExtResource( 15 )]
+margin_left = 10.3389
+margin_top = 559.591
+margin_right = 10.3389
+margin_bottom = 559.591
+rect_scale = Vector2( 0.64, 0.28 )
+
 [node name="FuelLabel" type="RichTextLabel" parent="CanvasLayer"]
 margin_left = 12.1353
 margin_top = 48.0564
@@ -90,6 +98,18 @@ margin_bottom = 88.0564
 bbcode_enabled = true
 bbcode_text = "[b]FUEL[/b]"
 text = "FUEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UruguruLabel" type="RichTextLabel" parent="CanvasLayer"]
+margin_left = 17.3047
+margin_top = 570.169
+margin_right = 97.3047
+margin_bottom = 610.169
+bbcode_enabled = true
+bbcode_text = "[b]URUGURU[/b]"
+text = "URUGURU"
 __meta__ = {
 "_edit_use_anchors_": false
 }

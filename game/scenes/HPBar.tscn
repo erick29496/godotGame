@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/UruburuBar.gd" type="Script" id=1]
+[ext_resource path="res://interface/fuel_bar/fuelbar-back.png" type="Texture" id=3]
+[ext_resource path="res://interface/fuel_bar/fuelbar-progress.png" type="Texture" id=4]
+
+[node name="HPBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPUnder" type="TextureProgress" parent="."]
+margin_right = 842.0
+margin_bottom = 130.0
+rect_scale = Vector2( 0.3, 0.746 )
+max_value = 500.0
+value = 100.0
+texture_under = ExtResource( 3 )
+tint_progress = Color( 0.00784314, 0.670588, 0.992157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPOver" type="TextureProgress" parent="."]
+margin_left = -0.957184
+margin_right = 841.043
+margin_bottom = 130.0
+rect_scale = Vector2( 0.3, 0.731 )
+max_value = 100.0
+value = 100.0
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateTween" type="Tween" parent="."]
